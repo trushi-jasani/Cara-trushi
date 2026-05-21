@@ -2847,6 +2847,84 @@ footer .copyright {
    CART PAGE
    ============================================ */
 
+        /* ── Breadcrumb Navigation ── */
+        .cart-breadcrumb {
+            padding: 30px 80px 10px 80px;
+            background-color: var(--bg-primary);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 16px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+
+        .cart-breadcrumb .breadcrumb-item {
+            text-decoration: none;
+            color: var(--text-secondary);
+            transition: color 0.3s ease, transform 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .cart-breadcrumb a.breadcrumb-item::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--accent);
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+        }
+
+        .cart-breadcrumb a.breadcrumb-item:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        .cart-breadcrumb a.breadcrumb-item:hover {
+            color: var(--accent);
+            transform: translateY(-1px);
+        }
+
+        .cart-breadcrumb .breadcrumb-separator {
+            color: var(--text-secondary);
+            font-size: 11px;
+            display: inline-flex;
+            align-items: center;
+            opacity: 0.6;
+            margin: 0 4px;
+        }
+
+        .cart-breadcrumb .breadcrumb-item.active {
+            color: var(--text-primary);
+            font-weight: 600;
+            cursor: default;
+        }
+
+        /* Responsive breadcrumb */
+        @media (max-width: 1200px) {
+            .cart-breadcrumb {
+                padding: 30px 60px 10px 60px;
+            }
+        }
+
+        @media (max-width: 799px) {
+            .cart-breadcrumb {
+                padding: 20px 24px 5px 24px;
+                font-size: 14px;
+                gap: 8px;
+            }
+            .cart-breadcrumb .breadcrumb-separator {
+                font-size: 10px;
+                margin: 0 2px;
+            }
+        }
+
         #cart {
             overflow-x: auto;
             margin-top: 20px;
